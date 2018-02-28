@@ -117,10 +117,12 @@
 
       //funcion para abrir y cerrar con el boton
       function toggleMenu(){
+        if (consulta.matches) {
         $menu.classList.toggle('active');
         document.body.classList.toggle('opened');
         $burguerButton.classList.toggle('icon-close');      
-      };
+      }
+    };
 
       //verificamos si la media query es true o false
       function mediaQuery(){
