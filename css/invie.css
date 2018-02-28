@@ -319,6 +319,7 @@ input:focus, textarea:focus {
   border: solid 2px white;
   border-radius: 50%;
   line-height: 40px;
+  color: white;
 
   background: #395667;
   display: inline-block;
