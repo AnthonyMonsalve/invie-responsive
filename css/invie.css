@@ -322,7 +322,7 @@ input:focus, textarea:focus {
   color: white;
 
   background: #395667;
-  display: inline-block;
+  display: none;
   text-align: center;
   cursor: pointer;
 
@@ -333,6 +333,15 @@ input:focus, textarea:focus {
   z-index: 3;
 }
 
+.texto-hidden{
+  display: none;
+  text-align: center;
+  font-size: 12px;
+}
+
+.opened{
+  overflow: hidden;
+}
 @media screen and (max-width: 800px) {
   /*body {
     border: 10px solid red;
@@ -341,6 +350,16 @@ input:focus, textarea:focus {
     width: auto;
     max-width: 800px;
   }*/
+  /*Precios*/
+  .tabla{
+    padding: 10px;
+  }
+  .tabla .contenedor{
+    overflow: auto;
+    border: solid 1px #273b47;
+  }
+
+  /*Precios*/
   /* portada */
   .titulo {
     font-size: 45px;
@@ -426,6 +445,10 @@ input:focus, textarea:focus {
 
 @media screen and (max-width: 650px) {
 
+  .texto-hidden{
+    display: block;
+  }
+
   .header {
     text-align: center;
     padding: 10px 0 5px 0;
@@ -448,12 +471,22 @@ input:focus, textarea:focus {
     padding: 0;
   }
 
+  /*Footer*/
+  .col2{
+    align-items: stretch;
+  }
+  /*Footer*/
+
 
 }
 
 
 @media screen and (max-width: 500px) {
   /* portada */
+  .burguer-button{
+    display: block;
+  }
+
   .portada .contenedor{
     position: static;
   }

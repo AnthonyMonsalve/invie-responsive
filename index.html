@@ -21,7 +21,7 @@
               <a href="index.html">Home</a>
             </li>
             <li>
-              <a href="#guitarras">Guitarras</a>
+              <a href="#guitarras" onclick="toggleMenu()">Guitarras</a>
             </li>
             <li>
               <a href="precios.html">Precios</a>
@@ -105,16 +105,24 @@
       </div>
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/blazy/1.8.2/blazy.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
     <script>
+      //declaramos la media query
       var consulta = window.matchMedia('(max-width: 500px)');
+      //si se cumple la media wuery escuchará a media query
       consulta.addListener(mediaQuery);
 
       var $burguerButton = document.getElementById('burguerButton');
       var $menu = document.getElementById('menu');
+
+      //funcion para abrir y cerrar con el boton
       function toggleMenu(){
         $menu.classList.toggle('active');
+        document.body.classList.toggle('opened');
+        $burguerButton.classList.toggle('icon-close');      
       };
 
+      //verificamos si la media query es true o false
       function mediaQuery(){
         if (consulta.matches) {
           $burguerButton.addEventListener('touchstart', toggleMenu);
@@ -123,15 +131,33 @@
         }
       }
 
+      // funciones para  Gestos touch
+      function showMenu(){
+        $menu.classList.add('active');
+        $burguerButton.classList.add('icon-close');
+        document.body.classList.add('opened');
+      };
+      function hideMenu(){
+        $menu.classList.remove('active');
+        $burguerButton.classList.remove('icon-close');
+        document.body.classList.remove('opened');
+      };
+
       mediaQuery();
+
+      //Gestos touch
+      var $body = document.body; //el elemento donde se van a desenvolver los gestos
+
+      var gestos = new Hammer($body);
+      gestos.on('swipeleft', hideMenu);
+      gestos.on('swiperight', showMenu);
 
       //Lazy loading
 
       var bLazy = new Blazy({
           selector: 'img'
-      });
+      });   
 
-      // $menu.classList.toggle('active')
     </script>
   </body>
 </html>
