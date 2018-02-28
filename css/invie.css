@@ -316,7 +316,7 @@ input:focus, textarea:focus {
 .burguer-button{
   width: 40px;
   height: 40px; 
-  border: solid 1px white;
+  border: solid 2px white;
   border-radius: 50%;
   line-height: 40px;
 
@@ -454,6 +454,12 @@ input:focus, textarea:focus {
   /* portada */
   .portada .contenedor{
     position: static;
+  }
+  .burguer-button{
+    position: fixed;
+    -webkit-box-shadow: 5px 5px 12px -5px rgba(0,0,0,1);
+    -moz-box-shadow: 5px 5px 12px -5px rgba(0,0,0,1);
+    box-shadow: 5px 5px 12px -5px rgba(0,0,0,1);
   }
   .menu {
     background: rgba(255, 60, 88, .8);
