@@ -342,6 +342,18 @@ input:focus, textarea:focus {
 .opened{
   overflow: hidden;
 }
+/* Imagenes loader*/
+
+.contenedor-img img{
+  opacity: 0;
+  transition: 2s;
+}
+
+.contenedor-img img.b-loaded{
+  opacity: 1;
+}
+
+/* Imagenes loader*/
 @media screen and (max-width: 800px) {
   /*body {
     border: 10px solid red;
